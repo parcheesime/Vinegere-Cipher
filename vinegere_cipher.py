@@ -23,6 +23,16 @@ def num_to_text(nums):
     return plain
 
 
+def make_key(plaintext, keyword):
+    add_on = len(plaintext) - len(keyword)
+    key_list = text_to_num(keyword)
+    print(len(plaintext))
+    for k in range(0, add_on):
+        key_list.append(key_list[k])
+    print(len(key_list))
+    return key_list
+
+
 def encrypt(plaintext, keyword):
     pt = text_to_num(plaintext)
     kw = text_to_num(keyword)
@@ -37,7 +47,7 @@ if ask.upper() == "E":
     plaintext = input('Enter the plaintext message to be encrypted: ')
     keyword = input("Enter the keyword for the message: ")
     print(text_to_num(plaintext))
-    print(text_to_num(keyword))
+    print(make_key(plaintext, keyword))
 elif ask.upper() == "D":
     cyphertext = input("Enter the encrypted message: ")
     keyword = input("Enter the keyword for the message: ")
