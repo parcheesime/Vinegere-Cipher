@@ -1,5 +1,5 @@
 # Vigenere Cipher
-
+import re
 # Translate some text into ciphertext, each letter is represented by a numbered index
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
             'w', 'x', 'y', 'z']
@@ -33,7 +33,8 @@ def encrypt(plaintext, keyword):
     pt = text_to_num(plaintext)
     kw = make_key(plaintext, keyword)
     encryption = [str((pt[i] + kw[i]) % 26) for i in range(len(pt))]
-    return "".join(encryption)
+    encryption = "".join(encryption)
+    return ' '.join(re.findall('.{1,4}', encryption))
 
 
 def decrypt(cyphertext, keyword):
