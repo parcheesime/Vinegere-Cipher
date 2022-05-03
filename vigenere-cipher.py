@@ -39,7 +39,8 @@ def encrypt(plaintext, secretkey):
     if len(plaintext) > len(secretkey):
         pt = text_to_num(plaintext)
         kw = make_key(plaintext, secretkey)
-        encryption = [str((pt[i] + kw[i]) % 26) for i in range(len(pt))]
+        encryption = [(pt[i] + kw[i]) % 26 for i in range(len(pt))]
+        encryption = num_to_text(encryption)
         encryption = "".join(encryption)
         return ' '.join(re.findall('.{1,4}', encryption))
     else:
