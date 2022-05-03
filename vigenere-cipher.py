@@ -5,15 +5,15 @@ import re
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
             'v', 'w', 'x', 'y', 'z']
 
-
+# Take a string of letters, transform to numbers
 def text_to_num(text):
-    cipher = []
+    nums = []
     text = text.lower()
     for p in text:
         for letter in alphabet:
             if p == letter:
-                cipher.append(alphabet.index(letter))
-    return cipher
+                nums.append(alphabet.index(letter))
+    return nums
 
 
 def num_to_text(nums):
