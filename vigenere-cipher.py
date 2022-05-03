@@ -60,6 +60,6 @@ if ask.upper() == "E":
 elif ask.upper() == "D":
     encrypted_text = input("Enter the encrypted message: ")
     key_word = input("Enter the keyword for the message: ")
-    print(decrypt(encrypted_text,key_word))
+    print(decrypt(encrypted_text, key_word))
 else:
     print("Bad Input")
