@@ -56,13 +56,10 @@ ask = input("Encrypt(E) or Decrypt(D) a message?")
 if ask.upper() == "E":
     plain_text = input('Enter the plaintext message to be encrypted: ').replace(" ", "")
     key_word = input("Enter the keyword for the message: ").replace(" ", "")
-    print("Length of message: {}".format(len(text_to_num(plain_text))))
-    print("Length of key: {}".format(len(make_key(plain_text, key_word))))
     print(encrypt(plain_text, key_word))
 elif ask.upper() == "D":
     encrypted_text = input("Enter the encrypted message: ")
     key_word = input("Enter the keyword for the message: ")
-    decrypted_text = decrypt(encrypted_text,key_word)
-    print(decrypted_text)
+    print(decrypt(encrypted_text,key_word))
 else:
     print("Bad Input")
