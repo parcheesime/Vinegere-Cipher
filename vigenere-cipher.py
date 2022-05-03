@@ -50,6 +50,7 @@ def decrypt(cyphertext, secretkey):
     decryption = num_to_text(cypher_nums)
     return decryption
 
+
 # Get message and key from user
 ask = input("Encrypt(E) or Decrypt(D) a message?")
 if ask.upper() == "E":
