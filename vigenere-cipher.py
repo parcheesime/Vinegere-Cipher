@@ -5,7 +5,7 @@ import re
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
             'v', 'w', 'x', 'y', 'z']
 
-# Take a string of letters, transform to numbers
+# String of letters, transform to numbers
 def text_to_num(text):
     nums = []
     text = text.lower()
@@ -15,7 +15,7 @@ def text_to_num(text):
                 nums.append(alphabet.index(letter))
     return nums
 
-
+# Numbers transform to letters
 def num_to_text(nums):
     text = []
     for c in nums:
