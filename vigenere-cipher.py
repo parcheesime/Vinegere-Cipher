@@ -7,21 +7,13 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 
 # String of letters, transform to numbers
 def text_to_num(text):
-    nums = []
     text = text.lower()
-    for p in text:
-        for letter in alphabet:
-            if p == letter:
-                nums.append(alphabet.index(letter))
+    nums = [alphabet.index(letter) for p in text for letter in alphabet if p == letter]
     return nums
 
 # Numbers transform to letters
 def num_to_text(nums):
-    text = []
-    for c in nums:
-        for i in alphabet:
-            if c == alphabet.index(i):
-                text.append(i)
+    text = [i for c in nums for i in alphabet if c == alphabet.index(i)]
     return "".join(text)
 
 
