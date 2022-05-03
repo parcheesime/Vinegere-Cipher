@@ -36,11 +36,14 @@ def make_key(plaintext, secretkey):
 
 
 def encrypt(plaintext, secretkey):
-    pt = text_to_num(plaintext)
-    kw = make_key(plaintext, secretkey)
-    encryption = [str((pt[i] + kw[i]) % 26) for i in range(len(pt))]
-    encryption = "".join(encryption)
-    return ' '.join(re.findall('.{1,4}', encryption))
+    if len(plaintext) > len(secretkey):
+        pt = text_to_num(plaintext)
+        kw = make_key(plaintext, secretkey)
+        encryption = [str((pt[i] + kw[i]) % 26) for i in range(len(pt))]
+        encryption = "".join(encryption)
+        return ' '.join(re.findall('.{1,4}', encryption))
+    else:
+        print("Shorten keyword, try again.")
 
 
 def decrypt(cyphertext, secretkey):
