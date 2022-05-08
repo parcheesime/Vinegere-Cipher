@@ -1,9 +1,9 @@
 # Vigenere Cipher
 import re
+import string
 
 # Translate some text into ciphertext, each letter is represented by a numbered index
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
-            'v', 'w', 'x', 'y', 'z']
+alphabet = list(string.ascii_lowercase)
 
 # String of letters, transform to numbers
 def text_to_num(text):
