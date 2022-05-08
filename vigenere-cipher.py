@@ -1,8 +1,10 @@
-# Vigenere Cipher
+# Vigenere Cipher is a block cipher where messages of blocks of length n,
+# use keys of length n for encryption and decryption
 import re
 import string
 
-# Translate some text into ciphertext, each letter is represented by a numbered index
+
+# Each letter represented by index in alphabet list
 alphabet = list(string.ascii_lowercase)
 
 # String of letters, transform to numbers
