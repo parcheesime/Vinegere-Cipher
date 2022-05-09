@@ -1,6 +1,4 @@
-import re
 import string
-
 
 # Each letter represented by index in alphabet list
 alphabet = list(string.ascii_lowercase)
